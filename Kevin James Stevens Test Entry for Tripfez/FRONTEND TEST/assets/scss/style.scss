@@ -1,0 +1,116 @@
+
+/** FRONTEND TEST : CSS **/
+
+body {
+    span,p,li,a,h1,h2,h3 {
+        font-family: 'Roboto','san-serif';
+    }
+    .main-container {
+        max-width: 1199px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    .packages {
+        margin: 45px 0;
+        width: 100%;
+        .package {
+            margin: 0 0 20px 0;
+            display: flex;
+            flex-flow: column;
+            .img, .details, .pricing {
+                border: 1px solid #000;
+            }
+            .img, .details {
+                border-bottom: 0px;
+            }
+            .img {
+                width: 100%;
+                height: 320px;
+            }
+            .details {
+                padding: 12px;
+                .title {
+                    margin: 0 0 45px 0;
+                    h2 {
+                        font: 500 25px/100% 'Roboto';
+                        text-align: left;
+                        margin: 0 0 10px 0;
+                    }
+                    p {
+                        font: 500 19px/100% 'Roboto';
+                    }
+                }
+                .highlights {
+                    ul {
+                        padding: 0 0 0 10px;
+                        li {
+                            list-style: none;
+                            &:before {
+                                display: inline-block;
+                                content: '-';
+                                margin: 0 10px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .pricing {
+                font: 500 16px/125% 'Roboto';
+                padding: 12px;
+                display: flex;
+                align-items: center;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                &.nosavings {
+                    justify-content: flex-end;
+                }
+                .savings {
+                    span {
+                        padding: 10px;
+                        border-radius: 5px;
+                        background-color: #d6d6d6;
+                    }
+                }
+                .per-person {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+/** RESPONSIVE LAYOUT **/
+
+@media screen and (min-width: 991px) {
+    body {
+        .packages {
+            .package {
+                flex-flow: row;
+                justify-content: space-around;
+                .img, .details {
+                    border-bottom: 1px solid #000;
+                }
+                .pricing, .details {
+                    border-left: 0px;
+                }
+                .img {
+                    width: 30%;
+                }
+                .details {
+                    width: 50%;
+                }
+                .pricing {
+                    flex-flow: column;
+                    align-items: flex-end;
+                    width: 20%;
+                    .savings {
+                        margin: 12px 0 0 0;
+                    }
+                    .per-person {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
